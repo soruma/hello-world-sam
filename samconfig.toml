@@ -8,3 +8,5 @@ s3_prefix = "sandbox-sam"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
+parameter_overrides = "ApiStageName=\"Prod\""
+
