@@ -3,9 +3,8 @@ version = 0.1
 [default.deploy]
 [default.deploy.parameters]
 stack_name = "sandbox-sam"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-1atsly7ycar6w"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-f3ucdzk6ig7f"
 s3_prefix = "sandbox-sam"
 region = "us-east-1"
-profile = "soruma"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
