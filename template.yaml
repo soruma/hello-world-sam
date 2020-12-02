@@ -43,6 +43,28 @@ Resources:
             Action: execute-api:Invoke
             Resource: execute-api:/*/*/*
 
+  UsagePlan:
+    Type: "AWS::ApiGateway::UsagePlan"
+    Properties:
+      ApiStages:
+        - ApiId: !Ref HelloWorldFunctionApi
+          Stage: !Ref ApiStageName
+
+  UsagePlanKey:
+    Type: "AWS::ApiGateway::UsagePlanKey"
+    Properties:
+      KeyId: !Ref ApiKey
+      KeyType: API_KEY
+      UsagePlanId: !Ref UsagePlan
+
+  ApiKey:
+    Type: "AWS::ApiGateway::ApiKey"
+    Properties:
+      Enabled: True
+      StageKeys:
+        - RestApiId: !Ref HelloWorldFunctionApi
+          StageName: !Ref ApiStageName
+
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
   # Find out more about other implicit resources you can reference within SAM
