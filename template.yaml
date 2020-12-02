@@ -35,6 +35,7 @@ Resources:
     Properties:
       StageName: !Ref ApiStageName
       Auth:
+        ApiKeyRequired: True
         ResourcePolicy:
           CustomStatements:
             Effect: Allow
