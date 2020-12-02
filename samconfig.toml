@@ -8,5 +8,5 @@ s3_prefix = "sandbox-sam"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
-parameter_overrides = "ApiStageName=\"Prod\""
+parameter_overrides = "ApiStageName=\"Prod\" HelloWorldFunctionApiKeyValue=\"MD6Rz9lQLh2yUiAln0g384LkyoUebgWj5iRlE9wS\""
 

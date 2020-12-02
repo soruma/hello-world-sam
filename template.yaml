@@ -14,6 +14,9 @@ Parameters:
   ApiStageName:
     Type: String
     Default: Prod
+  HelloWorldFunctionApiKeyValue:
+    Type: String
+    Default: MD6Rz9lQLh2yUiAln0g384LkyoUebgWj5iRlE9wS
 
 Resources:
   HelloWorldFunction:
@@ -55,20 +58,21 @@ Resources:
   UsagePlanKey:
     Type: "AWS::ApiGateway::UsagePlanKey"
     Properties:
-      KeyId: !Ref ApiKey
+      KeyId: !Ref HelloWorldFunctionApiKey
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlan
     DependsOn:
       - UsagePlan
-      - ApiKey
+      - HelloWorldFunctionApiKey
 
-  ApiKey:
+  HelloWorldFunctionApiKey:
     Type: "AWS::ApiGateway::ApiKey"
     Properties:
       Enabled: True
       StageKeys:
         - RestApiId: !Ref HelloWorldFunctionApi
           StageName: !Ref ApiStageName
+      Value: !Ref HelloWorldFunctionApiKeyValue
     DependsOn:
       - HelloWorldFunctionApiStage
 
