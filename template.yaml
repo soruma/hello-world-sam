@@ -49,6 +49,8 @@ Resources:
       ApiStages:
         - ApiId: !Ref HelloWorldFunctionApi
           Stage: !Ref ApiStageName
+    DependsOn:
+      - HelloWorldFunctionApiStage
 
   UsagePlanKey:
     Type: "AWS::ApiGateway::UsagePlanKey"
@@ -56,6 +58,9 @@ Resources:
       KeyId: !Ref ApiKey
       KeyType: API_KEY
       UsagePlanId: !Ref UsagePlan
+    DependsOn:
+      - UsagePlan
+      - ApiKey
 
   ApiKey:
     Type: "AWS::ApiGateway::ApiKey"
@@ -64,6 +69,8 @@ Resources:
       StageKeys:
         - RestApiId: !Ref HelloWorldFunctionApi
           StageName: !Ref ApiStageName
+    DependsOn:
+      - HelloWorldFunctionApiStage
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
