@@ -46,7 +46,7 @@ Resources:
             Action: execute-api:Invoke
             Resource: execute-api:/*/*/*
 
-  UsagePlan:
+  HelloWorldFunctionApiUsagePlan:
     Type: "AWS::ApiGateway::UsagePlan"
     Properties:
       ApiStages:
@@ -55,14 +55,14 @@ Resources:
     DependsOn:
       - HelloWorldFunctionApiStage
 
-  UsagePlanKey:
+  HelloWorldFunctionApiUsagePlanKey:
     Type: "AWS::ApiGateway::UsagePlanKey"
     Properties:
       KeyId: !Ref HelloWorldFunctionApiKey
       KeyType: API_KEY
-      UsagePlanId: !Ref UsagePlan
+      UsagePlanId: !Ref HelloWorldFunctionApiUsagePlan
     DependsOn:
-      - UsagePlan
+      - HelloWorldFunctionApiUsagePlan
       - HelloWorldFunctionApiKey
 
   HelloWorldFunctionApiKey:
