@@ -2,9 +2,9 @@ version = 0.1
 [default]
 [default.deploy]
 [default.deploy.parameters]
-stack_name = "sandbox-sam"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-6q770mk0e26o"
-s3_prefix = "sandbox-sam"
+stack_name = "hello-world-sam"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-2qsp51f4knbh"
+s3_prefix = "hello-world-sam"
 region = "us-east-1"
 confirm_changeset = true
 capabilities = "CAPABILITY_IAM"
