@@ -9,6 +9,8 @@ Description: >
 Globals:
   Function:
     Timeout: 3
+  Api:
+    OpenApiVersion: 3.0.3
 
 Parameters:
   ApiStageName:
